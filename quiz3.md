@@ -24,9 +24,11 @@
 		MOV		r3, #1
 		MOV		r4, r0
 		
-loopa	CMP		r1, r4
+loopa	
 		ADDGT	r4, r3
-		ADDGT	r2, r4
+  TST		r4, r3
+		ADDEQ	r2, r4
+  CMP		r1, r4
 		BGT		loopa
 		
 		STR		r2, [r10]
@@ -38,9 +40,11 @@ loopa	CMP		r1, r4
 		MOV		r3, #4
 		MOV		r4, r0
 		
-loopb	CMP		r1, r4
+loopb
 		ADDGT	r4, r3
-		ADDGT	r2, r4
+  TST		r4, r3
+		ADDEQ	r2, r4
+  CMP		r1, r4
 		BGT		loopb
 		
 		STR		r2, [r11]
@@ -52,9 +56,11 @@ loopb	CMP		r1, r4
 		MOV		r3, #8
 		MOV		r4, r0
 		
-loopc	CMP		r1, r4
+loopc
 		ADDGT	r4, r3
-		ADDGT	r2, r4
+  TST		r4, r3
+		ADDEQ	r2, r4
+  CMP		r1, r4
 		BGT		loopc
 		
 		STR		r2, [r12]
